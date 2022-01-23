@@ -1,6 +1,7 @@
 import { loginPassword, userGet } from "@/api";
 import { mutateState } from "@/utils";
 import { useCookies } from "@vueuse/integrations";
+import { Module } from "vuex";
 
 const { VITE_TOKEN_KEY} = import.meta.env;
 const token = useCookies().get(VITE_TOKEN_KEY as string);

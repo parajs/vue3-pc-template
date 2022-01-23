@@ -1,6 +1,4 @@
 
-// const AutoImportESLintGlobals = require('unplugin-auto-import/eslint');
-
 
 module.exports = {
     "env": {
@@ -17,7 +15,6 @@ module.exports = {
     "globals": {
         "Atomics": "readonly",
         "SharedArrayBuffer": "readonly",
-        // ...AutoImportESLintGlobals()
     },
     "parserOptions": {
         "ecmaVersion": 2018,
