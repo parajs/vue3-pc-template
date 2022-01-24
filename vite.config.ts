@@ -11,7 +11,6 @@ import Components from 'unplugin-vue-components/vite';
 import { ConfigEnv, UserConfigExport } from 'vite';
 import eslintPlugin from 'vite-plugin-eslint';
 import Inspect from 'vite-plugin-inspect';
-import styleImport, { ElementPlusResolve } from 'vite-plugin-style-import';
 
 function resolve(dir: string) {
   return path.join(__dirname, dir);
@@ -59,11 +58,6 @@ export default function ({ command } : ConfigEnv): UserConfigExport{
           ElementPlusResolver(),
         ],
         dts: resolve("src/components.d.ts")
-      }),
-      styleImport({
-        libs: [
-          ElementPlusResolve()
-        ],
       }),
       vue(),
       vueJsx(),
