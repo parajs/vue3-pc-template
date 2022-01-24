@@ -1,4 +1,5 @@
 
+import CLayout from "@/components/CLayout/index.vue";
 import { RouteRecordRaw } from "vue-router";
 
 const routes: RouteRecordRaw[] = [
@@ -25,6 +26,21 @@ const routes: RouteRecordRaw[] = [
       meta: {
         keepAlive: true
       }
+    },
+    {
+      name: 'Layout',
+      path:"/layout",
+      component: CLayout,
+      children: [
+        {
+          name: 'Lab',
+          path:"/lab/:id?",
+          component: ()=> import("@/views/lab/Lab.vue"),
+          meta: {
+            usePathKey: true
+          }
+        }
+      ]
     },
   ];
 

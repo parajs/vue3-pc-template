@@ -28,7 +28,6 @@
 </CPage>
   
 </template>
-
 <script lang="ts" setup>
 import { md5Encryption } from '@/utils'
 const form = reactive({
@@ -77,9 +76,6 @@ const onSubmit =  ()=>{
             return false;
           }
         });
-
-   
-    
 }
 </script>
 <style scoped>
