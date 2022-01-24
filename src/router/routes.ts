@@ -18,6 +18,14 @@ const routes: RouteRecordRaw[] = [
         keepAlive: true
       }
     },
+    {
+      name: 'Register',
+      path:"/register",
+      component: ()=> import("@/views/register/Register.vue"),
+      meta: {
+        keepAlive: true
+      }
+    },
   ];
 
 

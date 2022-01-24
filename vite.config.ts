@@ -4,10 +4,15 @@ import vue from '@vitejs/plugin-vue';
 import vueJsx from '@vitejs/plugin-vue-jsx';
 import path from "path";
 import AutoImport from 'unplugin-auto-import/vite';
+import IconsResolver from 'unplugin-icons/resolver';
+import Icons from 'unplugin-icons/vite';
 import { ElementPlusResolver } from 'unplugin-vue-components/resolvers';
 import Components from 'unplugin-vue-components/vite';
 import { ConfigEnv, UserConfigExport } from 'vite';
 import eslintPlugin from 'vite-plugin-eslint';
+import Inspect from 'vite-plugin-inspect';
+import styleImport, { ElementPlusResolve } from 'vite-plugin-style-import';
+
 function resolve(dir: string) {
   return path.join(__dirname, dir);
 }
@@ -24,26 +29,47 @@ export default function ({ command } : ConfigEnv): UserConfigExport{
       }
     },
     plugins: [
+      Icons({
+        autoInstall: true,
+      }),
+      Inspect(),
       vueI18n({
         // if you want to use Vue I18n Legacy API, you need to set `compositionOnly: false`
         // you need to set i18n resource including paths !
         include: resolve('./src/i18n/**')
       }),
       AutoImport({
+        resolvers: [ElementPlusResolver()],
         eslintrc: {
           enabled: true, // Default `false`
           filepath: './.eslintrc-auto-import.json', // Default `./.eslintrc-auto-import.json`
           globalsPropValue: true // Default `true`, (true | false | 'readonly' | 'readable' | 'writable' | 'writeable')
         },
-        imports: ['vue','vue-router','vuex','vue-i18n']
+        imports: ['vue','vue-router','vuex','vue-i18n'],
+        dts: resolve("src/auto-imports.d.ts")
       }),
       Components({
         extensions: ['vue','tsx'],
-        resolvers: [ElementPlusResolver()],
+        resolvers: [
+          // Auto register icon components
+          // 自动注册图标组件
+          IconsResolver({
+            enabledCollections: ['ep'],
+          }),
+          ElementPlusResolver(),
+        ],
+        dts: resolve("src/components.d.ts")
+      }),
+      styleImport({
+        libs: [
+          ElementPlusResolve()
+        ],
       }),
       vue(),
       vueJsx(),
-      eslintPlugin(),
+      eslintPlugin({
+        fix: true,
+      }),
       legacy({
         targets: ['defaults', 'not IE 11']
       }),

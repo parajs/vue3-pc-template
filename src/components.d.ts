@@ -4,14 +4,13 @@
 
 declare module 'vue' {
   export interface GlobalComponents {
-    CAvatar: typeof import('./src/components/CAvatar/index.tsx')['default']
-    CHeader: typeof import('./src/components/CHeader/index.vue')['default']
-    CPage: typeof import('./src/components/CPage/index.tsx')['default']
+    CAvatar: typeof import('./components/CAvatar/index.tsx')['default']
+    CHeader: typeof import('./components/CHeader/index.vue')['default']
+    CPage: typeof import('./components/CPage/index.tsx')['default']
     ElButton: typeof import('element-plus/es')['ElButton']
     ElCard: typeof import('element-plus/es')['ElCard']
     ElCol: typeof import('element-plus/es')['ElCol']
     ElConfigProvider: typeof import('element-plus/es')['ElConfigProvider']
-    ElDivider: typeof import('element-plus/es')['ElDivider']
     ElDropdown: typeof import('element-plus/es')['ElDropdown']
     ElDropdownItem: typeof import('element-plus/es')['ElDropdownItem']
     ElDropdownMenu: typeof import('element-plus/es')['ElDropdownMenu']
@@ -21,10 +20,10 @@ declare module 'vue' {
     ElIcon: typeof import('element-plus/es')['ElIcon']
     ElInput: typeof import('element-plus/es')['ElInput']
     ElMain: typeof import('element-plus/es')['ElMain']
-    ElMenu: typeof import('element-plus/es')['ElMenu']
-    ElMenuItem: typeof import('element-plus/es')['ElMenuItem']
     ElRow: typeof import('element-plus/es')['ElRow']
-    ElSubMenu: typeof import('element-plus/es')['ElSubMenu']
+    IEpAddLocation: typeof import('~icons/ep/add-location')['default']
+    IEpBell: typeof import('~icons/ep/bell')['default']
+    IEpPlatformEleme: typeof import('~icons/ep/platform-eleme')['default']
   }
 }
 

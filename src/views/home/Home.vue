@@ -3,23 +3,23 @@
     <CPage>
          <template #header>
             <CHeader />
-        </template>
+         </template>
+         <div  class="text-center">
+              <h2>{{t("title")}}</h2>
+              <i-ep-add-location />
+         </div>
+        
     </CPage>
 </template>
 <script lang="ts" setup>
-import {
-  Search,
-  Edit,
-  Check,
-  Message,
-  Star,
-  Delete,
-} from '@element-plus/icons-vue'
-
 const { t } = useI18n({
     inheritLocale: true
 })
 
 </script>
+
+
+
+
 
 

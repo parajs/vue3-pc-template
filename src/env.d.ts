@@ -7,6 +7,6 @@ declare module '*.vue' {
   export default component
 }
 
-interface AnyObject {
-	[key: string]: any
-}
+
+
+
