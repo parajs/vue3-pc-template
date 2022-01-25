@@ -1,9 +1,7 @@
-// import { createApp } from 'vue';
-// import App from './AppTsx';
 import messages from '@intlify/vite-plugin-vue-i18n/messages';
+import 'element-plus/es/components/message/style/css';
 import { createI18n } from 'vue-i18n';
 import App from './App.vue';
-// import { i18n } from './i18n';
 import router from './router';
 import store from './store';
 const app = createApp(App);
