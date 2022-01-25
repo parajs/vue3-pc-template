@@ -2,7 +2,7 @@ import { useEventListener, useWindowSize } from '@vueuse/core';
 import { defineComponent, nextTick, onMounted, ref } from 'vue';
 import './index.css';
 
-interface CPageOptions {
+export interface CPageOptions {
   hideHeaderPlaceholder?: boolean;
   hideFooterPlaceholder?: boolean;
 }

@@ -1,7 +1,7 @@
 import { SetupContext } from 'vue';
 import styles from './index.module.css';
 
-interface CAvatarProps {
+export interface CAvatarProps {
   size?: number | string;
   color?: string;
   src?: string;
