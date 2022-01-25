@@ -8,9 +8,11 @@ import IconsResolver from 'unplugin-icons/resolver';
 import Icons from 'unplugin-icons/vite';
 import { ElementPlusResolver } from 'unplugin-vue-components/resolvers';
 import Components from 'unplugin-vue-components/vite';
-import { UserConfigExport } from 'vite';
+import type { UserConfigExport } from 'vite';
 import eslintPlugin from 'vite-plugin-eslint';
+import html from 'vite-plugin-html';
 import Inspect from 'vite-plugin-inspect';
+import vueSetupExtend from 'vite-plugin-vue-setup-extend';
 
 function resolve(dir: string) {
   return path.join(__dirname, dir);
@@ -28,6 +30,15 @@ export default function (): UserConfigExport {
       }
     },
     plugins: [
+      vueSetupExtend(),
+      html({
+        inject: {
+          data: {
+            title: 'KuggaMax'
+          }
+        },
+        minify: true
+      }),
       Icons({
         autoInstall: true
       }),

@@ -58,7 +58,7 @@
     </template>
   </el-header>
 </template>
-<script lang="ts" setup>
+<script lang="ts" setup name="CHeader">
 import logo from '@/assets/logo.svg';
 const tokenRef = ref('');
 const store = useStore();
