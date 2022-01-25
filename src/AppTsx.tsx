@@ -11,7 +11,10 @@ export default defineComponent({
       <ElConfigProvider locale={zhCn}>
         <Suspense onFallback={() => <div> Loading...</div>}>
           <RouterView>
-            {({ Component, route }) => {
+           
+            {
+              //@ts-ignore 
+            ({ Component, route }) => {
               const { meta } = route;
               const isKeepAlive = meta && meta.keepAlive;
               return (
