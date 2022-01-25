@@ -1,15 +1,14 @@
-import { modules } from "./modules";
-const  { DEV } = import.meta.env;
+import { modules } from './modules';
+const { DEV } = import.meta.env;
 
 export interface State {
-    [key: string]: any
+  [key: string]: any;
 }
 
 const store = createStore<State>({
-    modules,
-    strict: true,
-    plugins: DEV ? [createLogger()] : []
+  modules,
+  strict: true,
+  plugins: DEV ? [createLogger()] : []
 });
-
 
 export default store;
