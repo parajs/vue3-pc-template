@@ -4,10 +4,8 @@
 
 declare module 'vue' {
   export interface GlobalComponents {
-    CAvatar: typeof import('./components/CAvatar/index.tsx')['default']
     CHeader: typeof import('./components/CHeader/index.vue')['default']
     CLayout: typeof import('./components/CLayout/index.vue')['default']
-    CPage: typeof import('./components/CPage/index.tsx')['default']
     ElAside: typeof import('element-plus/es')['ElAside']
     ElBreadcrumb: typeof import('element-plus/es')['ElBreadcrumb']
     ElBreadcrumbItem: typeof import('element-plus/es')['ElBreadcrumbItem']
