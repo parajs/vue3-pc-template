@@ -7,10 +7,11 @@ module.exports = {
     },
     "extends": [
         './.eslintrc-auto-import.json',
-        "eslint:recommended",
         "plugin:vue/vue3-essential",
-        "plugin:@typescript-eslint/eslint-recommended",
-        "prettier"
+        "eslint:recommended",
+        "@vue/typescript/recommended",
+        "@vue/prettier",
+        "@vue/prettier/@typescript-eslint"
     ],
     "globals": {
         "Atomics": "readonly",
@@ -21,11 +22,11 @@ module.exports = {
         "parser": "@typescript-eslint/parser",
         "sourceType": "module"
     },
-    "plugins": [
-        "vue",
-        "@typescript-eslint",
-        "prettier",
-    ],
+    // "plugins": [
+    //     "vue",
+    //     "@typescript-eslint",
+    //     "prettier",
+    // ],
     "rules": {
         "vue/multi-word-component-names": "off",
         "no-unused-vars": "warn",
