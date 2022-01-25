@@ -6,25 +6,6 @@ declare module 'vue' {
   export interface GlobalComponents {
     CHeader: typeof import('./components/CHeader/index.vue')['default']
     CLayout: typeof import('./components/CLayout/index.vue')['default']
-    ElAside: typeof import('element-plus/es')['ElAside']
-    ElBreadcrumb: typeof import('element-plus/es')['ElBreadcrumb']
-    ElBreadcrumbItem: typeof import('element-plus/es')['ElBreadcrumbItem']
-    ElButton: typeof import('element-plus/es')['ElButton']
-    ElConfigProvider: typeof import('element-plus/es')['ElConfigProvider']
-    ElContainer: typeof import('element-plus/es')['ElContainer']
-    ElDropdown: typeof import('element-plus/es')['ElDropdown']
-    ElDropdownItem: typeof import('element-plus/es')['ElDropdownItem']
-    ElDropdownMenu: typeof import('element-plus/es')['ElDropdownMenu']
-    ElHeader: typeof import('element-plus/es')['ElHeader']
-    ElMain: typeof import('element-plus/es')['ElMain']
-    ElMenu: typeof import('element-plus/es')['ElMenu']
-    ElMenuItem: typeof import('element-plus/es')['ElMenuItem']
-    ElSubMenu: typeof import('element-plus/es')['ElSubMenu']
-    IEpAddLocation: typeof import('~icons/ep/add-location')['default']
-    IEpBell: typeof import('~icons/ep/bell')['default']
-    IEpDocument: typeof import('~icons/ep/document')['default']
-    IEpDocumentCopy: typeof import('~icons/ep/document-copy')['default']
-    IEpMenu: typeof import('~icons/ep/menu')['default']
   }
 }
 

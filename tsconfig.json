@@ -16,12 +16,11 @@
       "node",
       "@intlify/vite-plugin-vue-i18n/client",
       "element-plus/global",
-      "unplugin-icons/types/vue",
-      "src/components/CAvatar"
+      "unplugin-icons/types/vue"
     ],
     "paths": {
       "@/*":["src/*"]
     }
   },
-  "include": ["src/**/*.ts", "src/**/*.d.ts", "src/**/*.tsx", "src/**/*.vue"]
+  "include": ["src/**/*.ts", "src/**/*.d.ts", "src/**/*.tsx", "src/**/*.vue", "src/components/CAvatar/index.js"]
 }

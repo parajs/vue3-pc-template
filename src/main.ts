@@ -17,5 +17,6 @@ app.use(router);
 app.use(store);
 app.use(i18n);
 app.component('CPage', CPage);
+//@ts-ignore
 app.component('CAvatar', CAvatar);
 app.mount('#app');
