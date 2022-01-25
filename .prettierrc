@@ -5,6 +5,5 @@
   "tabWidth": 2,
   "useTabs": false,
   "htmlWhitespaceSensitivity": "strict",
-  "trailingComma": "none",
-  "endOfLine": "lf"
+  "trailingComma": "none"
 }
