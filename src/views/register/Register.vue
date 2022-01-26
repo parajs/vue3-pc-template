@@ -3,42 +3,22 @@
     <CHeader />
     <el-main>
       <el-row :gutter="10">
-        <el-col
-          :xs="22"
-          :sm="20"
-          :md="12"
-          :lg="8"
-          :xl="6"
-          style="margin: 0 auto"
-        >
+        <el-col :xs="22" :sm="20" :md="12" :lg="8" :xl="6" style="margin: 0 auto">
           <el-card class="box-card">
-            <el-form
-              :model="form"
-              :rules="rules"
-              ref="ruleForm"
-              class="text-center"
-            >
+            <el-form :model="form" :rules="rules" ref="ruleForm" class="text-center">
               <h3>注册</h3>
               <el-form-item prop="email">
-                <el-input
-                  size="large"
-                  v-model="form.email"
-                  placeholder="请输入邮箱"
-                ></el-input>
+                <el-input size="large" v-model="form.email" placeholder="请输入邮箱"></el-input>
               </el-form-item>
               <el-form-item prop="code" class="mt-8">
-                <el-input
-                  size="large"
-                  v-model="form.code"
-                  placeholder="请输入验证码"
-                ></el-input>
-                <div class="getCodeBtn" @click="getVertifyCode">
-                  {{ isSending ? '发送验证码中' : '获取验证码' }}
-                </div>
+                <el-input size="large" v-model="form.code" placeholder="请输入验证码"></el-input>
+                <div class="getCodeBtn" @click="getVertifyCode">{{ isSending ? '发送验证码中' : '获取验证码' }}</div>
               </el-form-item>
               <el-form-item prop="password" class="mt-8">
                 <el-input
                   size="large"
+                  type="password"
+                  show-password
                   v-model="form.password"
                   placeholder="请输入密码6-18英文、数字、符号的组合"
                 ></el-input>
@@ -50,8 +30,7 @@
                   type="primary"
                   round
                   @click="onSubmit"
-                  >注册</el-button
-                >
+                >注册</el-button>
               </el-form-item>
             </el-form>
           </el-card>
