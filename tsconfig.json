@@ -11,6 +11,7 @@
     "resolveJsonModule": true,
     "esModuleInterop": true,
     "lib": ["esnext", "dom"],
+    "skipLibCheck":true,
     "baseUrl": ".",
     "types": [
       "node",

@@ -21,13 +21,13 @@ export default defineComponent({
                     <KeepAlive>
                       {isKeepAlive ? (
                         <Component
-                          key={meta.usePathKey ? route.fullPath : undefined}
+                          key={meta.usePathKey ? route.path : undefined}
                         />
                       ) : null}
                     </KeepAlive>
                     {!isKeepAlive ? (
                       <Component
-                        key={meta.usePathKey ? route.fullPath : undefined}
+                        key={meta.usePathKey ? route.path : undefined}
                       />
                     ) : null}
                   </>
