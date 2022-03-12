@@ -29,6 +29,14 @@ export default function (): UserConfigExport {
         '/static': 'http://api.beehub.paradeum.com:8110'
       }
     },
+    css: {
+      preprocessorOptions: {
+        scss: {
+          // 自定义的主题色
+          additionalData: `@use "@/styles/element/index.scss" as *;`
+        }
+      }
+    },
     plugins: [
       vueSetupExtend(),
       html({

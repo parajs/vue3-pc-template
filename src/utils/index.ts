@@ -1,4 +1,35 @@
+import dayjs from 'dayjs';
 import md5 from 'md5';
+
+/**
+ * 格式化时间
+ */
+export function formatTime(
+  date?: string | number | Date | dayjs.Dayjs | null | undefined,
+  template?: string | undefined
+) {
+  return dayjs(date).format(template);
+}
+
+/**
+ *
+ * 格式化时间
+ */
+export function timeAgo(
+  date?: string | number | Date | dayjs.Dayjs | null | undefined,
+  template?: string
+) {
+  const d = dayjs(date).valueOf();
+  const now = Date.now();
+  const diff = (now - d) / 1000;
+  if (diff < 3600) {
+    return Math.ceil(diff / 60) + '分钟前';
+  } else if (diff < 3600 * 24) {
+    return Math.ceil(diff / 3600) + '小时前';
+  } else {
+    return formatTime(date, template);
+  }
+}
 
 /**
  * md5加密
