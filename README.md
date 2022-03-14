@@ -15,3 +15,7 @@ Since TypeScript cannot handle type information for `.vue` imports, they are shi
 [ElementPlus](https://element-plus.gitee.io/zh-CN/guide/design.html)
 
 [iconify](https://icon-sets.iconify.design/)
+
+## login preview
+
+![login preview](./public/login-preview.png)
