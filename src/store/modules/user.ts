@@ -54,7 +54,7 @@ const store: Module<StoreUser, unknown> = {
     },
     userLogout() {
       return new Promise((resolve) => {
-        useCookies().remove(VITE_TOKEN_KEY as string);
+        useCookies().remove(VITE_TOKEN_KEY as string,{path:'/'});
         window.location.href = '/';
         resolve('退出成功');
       });
