@@ -12,7 +12,11 @@
               </el-form-item>
               <el-form-item prop="code" class="mt-8">
                 <el-input size="large" v-model="form.code" placeholder="请输入验证码"></el-input>
-                <div class="getCodeBtn" @click="getVertifyCode">{{ isSending ? '发送验证码中' : '获取验证码' }}</div>
+                <div class="getCodeBtn" @click="getVertifyCode">
+                  {{
+                    isSending ? '发送验证码中' : '获取验证码'
+                  }}
+                </div>
               </el-form-item>
               <el-form-item prop="password" class="mt-8">
                 <el-input
@@ -21,6 +25,7 @@
                   show-password
                   v-model="form.password"
                   placeholder="请输入密码6-18英文、数字、符号的组合"
+                  @click="onSubmit"
                 ></el-input>
               </el-form-item>
               <el-form-item class="mt-8">
@@ -42,8 +47,8 @@
 
 <script lang="ts" setup>
 import { codeGet, readerRegister } from '@/api';
-import { ElMessage } from 'element-plus';
 import { md5Encryption } from '@/utils';
+import { ElMessage } from 'element-plus';
 
 const router = useRouter();
 const store = useStore();
