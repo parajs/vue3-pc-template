@@ -3,8 +3,10 @@ import { useTitle } from '@vueuse/core';
 import { useCookies } from '@vueuse/integrations/useCookies';
 import {
   createRouter,
-  createWebHistory, RouteLocationNormalized,
-  RouteLocationNormalizedLoaded, Router
+  createWebHistory,
+  RouteLocationNormalized,
+  RouteLocationNormalizedLoaded,
+  Router
 } from 'vue-router';
 import routes from './routes';
 
@@ -82,19 +84,18 @@ router.beforeEach(async (to, from, next) => {
   if (hasToken) {
     // 已登录后访问登录页，重定向首页
     to.name == 'Login' ? next('/') : null;
-    const hasUserInfo = store.state.user.user.id;
-    if (hasUserInfo) {
-      next();
-    } else {
+    const hasId = store.state.user.user.id;
+    if (!hasId) {
+      // 刷新
       try {
         // get user info
         await store.dispatch('user/userGet');
-        next();
       } catch (error) {
         // remove token and go to home
         await store.dispatch('user/userLogout');
       }
     }
+    next();
   } else {
     // has no token
     if (authList.indexOf(to.name as string) == -1) {

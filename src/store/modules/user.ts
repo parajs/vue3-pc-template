@@ -30,7 +30,9 @@ const store: Module<StoreUser, unknown> = {
         const { data, error } = loginPassword(payload);
         watch(data, () => {
           context.commit('mutateState', data.value);
-          useCookies().set(VITE_TOKEN_KEY as string, data.value.token);
+          useCookies().set(VITE_TOKEN_KEY as string, data.value.token, {
+            path: '/'
+          });
           resolve(data.value);
         });
 
