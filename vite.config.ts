@@ -13,7 +13,7 @@ import eslintPlugin from 'vite-plugin-eslint';
 import html from 'vite-plugin-html';
 import Inspect from 'vite-plugin-inspect';
 import vueSetupExtend from 'vite-plugin-vue-setup-extend';
-
+import svgLoader from 'vite-svg-loader';
 function resolve(dir: string) {
   return path.join(__dirname, dir);
 }
@@ -49,6 +49,9 @@ export default function (): UserConfigExport {
       }),
       Icons({
         autoInstall: true
+      }),
+      svgLoader({
+        defaultImport: 'raw' // or 'url'
       }),
       Inspect(),
       vueI18n({
