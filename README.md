@@ -19,3 +19,4 @@ Since TypeScript cannot handle type information for `.vue` imports, they are shi
 ## login preview
 
 ![login preview](./public/login-preview.png)
+![login preview](./public/1650566449.jpg)
