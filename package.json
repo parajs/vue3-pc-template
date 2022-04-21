@@ -1,6 +1,6 @@
 {
   "name": "vue3-pc-template",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "Vite + ElementPlus + Vue3 + TS + Vue-Router4 + Vuex4 + Vue-use + Vue-i18n PC Template",
   "scripts": {
     "dev": "vite",
