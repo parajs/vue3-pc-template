@@ -28,11 +28,13 @@
       <el-dropdown class="ml-8">
         <CAvatar
           size="40"
-          src="https://fuss10.elemecdn.com/e/5d/4a731a90594a4af544c0c25941171jpeg.jpeg"
+          :src="user.user.avatar"
+          :color="user.user.userBackcolor"
+          :text="user.user.userAbbr"
         />
         <template #dropdown>
           <el-dropdown-menu style="width: 140px">
-            <el-dropdown-item>
+            <el-dropdown-item @click="routerPush({ name: 'Dashboard' })">
               <div class="dropdown-item">工作台</div>
             </el-dropdown-item>
             <el-dropdown-item>
@@ -49,10 +51,18 @@
       </el-dropdown>
     </template>
     <template v-else>
-      <el-button @click="loginPage" class="btn-common" type="text" size="large"
+      <el-button
+        @click="routerPush({ name: 'Login' })"
+        class="btn-common"
+        type="text"
+        size="large"
         >登录</el-button
       >
-      <el-button @click="regPage" class="btn-common" type="text" size="large"
+      <el-button
+        @click="routerPush({ name: 'Register' })"
+        class="btn-common"
+        type="text"
+        size="large"
         >注册</el-button
       >
     </template>
@@ -60,24 +70,18 @@
 </template>
 <script lang="ts" setup name="CHeader">
 import logo from '@/assets/logo.svg';
+import { routerPush } from '@/router';
 const tokenRef = ref('');
 const store = useStore();
-const router = useRouter();
-watchEffect(() => {
-  tokenRef.value = store.state.user.token;
+
+const user = reactive({
+  user: { avatar: '', userAbbr: '', userBackcolor: '' }
 });
 
-const loginPage = () => {
-  router.push({
-    name: 'Login'
-  });
-};
-
-const regPage = () => {
-  router.push({
-    name: 'Register'
-  });
-};
+watchEffect(() => {
+  tokenRef.value = store.state.user.token;
+  user.user = store.state.user.user;
+});
 
 const userLogout = () => {
   store.dispatch({
@@ -92,6 +96,7 @@ const userLogout = () => {
   display: flex;
   align-items: center;
 }
+
 .title {
   margin: 0;
   margin-left: 10px;
@@ -99,6 +104,7 @@ const userLogout = () => {
   color: black;
   text-decoration: none;
 }
+
 .btn-common {
   color: black;
   padding-left: 15px;
@@ -106,6 +112,7 @@ const userLogout = () => {
   font-size: 18px;
   font-weight: bold;
 }
+
 .dropdown-item {
   padding: 8px 0;
   text-align: center;

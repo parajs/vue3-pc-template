@@ -6,12 +6,12 @@ import {
   createWebHistory,
   RouteLocationNormalized,
   RouteLocationNormalizedLoaded,
+  RouteLocationRaw,
   Router
 } from 'vue-router';
 import routes from './routes';
 
-const { VITE_TOKEN_KEY, VITE_TITLE } = import.meta.env;
-
+const { VITE_TOKEN_KEY, VITE_TITLE, VITE_UID_KEY } = import.meta.env;
 // scrollBehavior:
 // - only available in html5 history mode
 // - defaults to no scroll behavior
@@ -88,8 +88,9 @@ router.beforeEach(async (to, from, next) => {
     if (!hasId) {
       // 刷新
       try {
+        const uid = useCookies().get(VITE_UID_KEY as string);
         // get user info
-        await store.dispatch('user/userGet');
+        await store.dispatch('user/userGet', { uid });
       } catch (error) {
         // remove token and go to home
         await store.dispatch('user/userLogout');
@@ -107,5 +108,25 @@ router.beforeEach(async (to, from, next) => {
     }
   }
 });
+
+export function routerPush(to: RouteLocationRaw) {
+  router.push(to);
+}
+
+export function routerReplace(to: RouteLocationRaw) {
+  router.replace(to);
+}
+
+export function routerBack() {
+  router.back();
+}
+
+export function routerForward() {
+  router.forward();
+}
+
+export function routerGo(delta: number) {
+  router.go(delta);
+}
 
 export default router;

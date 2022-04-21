@@ -3,7 +3,7 @@ import { mutateState } from '@/utils';
 import { useCookies } from '@vueuse/integrations';
 import { Module } from 'vuex';
 
-const { VITE_TOKEN_KEY } = import.meta.env;
+const { VITE_TOKEN_KEY, VITE_UID_KEY } = import.meta.env;
 const token = useCookies().get(VITE_TOKEN_KEY as string);
 
 interface StoreUser {
@@ -31,6 +31,9 @@ const store: Module<StoreUser, unknown> = {
         watch(data, () => {
           context.commit('mutateState', data.value);
           useCookies().set(VITE_TOKEN_KEY as string, data.value.token, {
+            path: '/'
+          });
+          useCookies().set(VITE_UID_KEY as string, data.value.user.id, {
             path: '/'
           });
           resolve(data.value);

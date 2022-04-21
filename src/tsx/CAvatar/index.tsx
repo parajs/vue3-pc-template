@@ -14,12 +14,12 @@ export interface CAvatarProps {
  */
 export default function CAvatar(props: CAvatarProps, context: SetupContext) {
   const { slots } = context;
-  const { size = 30, color = '#6476FF', src, text } = props;
+  const { size = 30, color = '', src, text } = props;
   return (
     <div
       class={styles.avatarBox}
       style={{
-        backgroundColor: color,
+        backgroundColor: src ? '' : color,
         height: `${size}px`,
         width: `${size}px`
       }}

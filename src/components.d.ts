@@ -5,7 +5,9 @@
 declare module 'vue' {
   export interface GlobalComponents {
     CHeader: typeof import('./components/CHeader/index.vue')['default']
+    CHeaderInner: typeof import('./components/CHeaderInner/index.vue')['default']
     CLayout: typeof import('./components/CLayout/index.vue')['default']
+    ElAffix: typeof import('element-plus/es')['ElAffix']
     ElAside: typeof import('element-plus/es')['ElAside']
     ElBreadcrumb: typeof import('element-plus/es')['ElBreadcrumb']
     ElBreadcrumbItem: typeof import('element-plus/es')['ElBreadcrumbItem']
@@ -30,7 +32,12 @@ declare module 'vue' {
     IEpBell: typeof import('~icons/ep/bell')['default']
     IEpDocument: typeof import('~icons/ep/document')['default']
     IEpDocumentCopy: typeof import('~icons/ep/document-copy')['default']
+    IEpExpand: typeof import('~icons/ep/expand')['default']
+    IEpFiles: typeof import('~icons/ep/files')['default']
+    IEpImage: typeof import('~icons/ep/image')['default']
+    IEpList: typeof import('~icons/ep/list')['default']
     IEpMenu: typeof import('~icons/ep/menu')['default']
+    IEpUser: typeof import('~icons/ep/user')['default']
   }
 }
 
