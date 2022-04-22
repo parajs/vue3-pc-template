@@ -66,14 +66,7 @@ const router: Router = createRouter({
 });
 
 // authList
-const authList: Array<string> = [
-  'My',
-  'MsgList',
-  'FollowList',
-  'Profile',
-  'ModifyPwd',
-  'MyResetPwd'
-];
+const whiteList: Array<string> = ['Home', 'Login', 'Register'];
 
 router.beforeEach(async (to, from, next) => {
   // set title
@@ -99,7 +92,7 @@ router.beforeEach(async (to, from, next) => {
     next();
   } else {
     // has no token
-    if (authList.indexOf(to.name as string) == -1) {
+    if (whiteList.indexOf(to.name as string) != -1) {
       //public page  go directly
       next();
     } else {
