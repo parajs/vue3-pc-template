@@ -1,6 +1,7 @@
 import CAvatar from '@/tsx/CAvatar';
 import CPage from '@/tsx/CPage';
 import messages from '@intlify/vite-plugin-vue-i18n/messages';
+import 'element-plus/es/components/message-box/style/css';
 import 'element-plus/es/components/message/style/css';
 import { createI18n } from 'vue-i18n';
 import App from './App.vue';
