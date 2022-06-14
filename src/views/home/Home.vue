@@ -1,5 +1,5 @@
 <template>
-  <CPage>
+  <VueLayoutPage>
     <template #header>
       <CHeader />
     </template>
@@ -7,7 +7,7 @@
       <h2>{{ t('title') }}</h2>
       <i-ep-add-location />
     </div>
-  </CPage>
+  </VueLayoutPage>
 </template>
 <script lang="ts" setup>
 const { t } = useI18n({

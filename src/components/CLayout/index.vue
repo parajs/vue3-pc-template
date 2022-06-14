@@ -6,13 +6,23 @@
           {{ VITE_TITLE }}
         </div>
         <div class="user-box">
-          <CAvatar size="45" :src="user.user.avatar" :color="user.user.userBackcolor" :text="user.user.userAbbr" />
+          <CAvatar
+            size="45"
+            :src="user.user.avatar"
+            :color="user.user.userBackcolor"
+            :text="user.user.userAbbr"
+          />
           <div class="mt-1" style="font-size: 14px">{{
             user.user.nickName
           }}</div>
         </div>
         <div class="pl-2 pr-2 mt-3">
-          <el-menu style="border: 0" :default-active="menuDefaultActive" :router="true" background-color="#f2f2f2">
+          <el-menu
+            style="border: 0"
+            :default-active="menuDefaultActive"
+            :router="true"
+            background-color="#f2f2f2"
+          >
             <el-menu-item index="/dashboard">
               <i-ep-expand height="20" width="20"></i-ep-expand>
               <span class="ml-2">dashboard</span>
@@ -48,11 +58,17 @@
     <div class="layout-main">
       <router-view v-slot="{ Component, route }">
         <keep-alive>
-          <component v-if="route.meta && route.meta.keepAlive" :is="Component"
-            :key="route.meta.usePathKey ? route.fullPath : undefined" />
+          <component
+            v-if="route.meta && route.meta.keepAlive"
+            :is="Component"
+            :key="route.meta.usePathKey ? route.fullPath : undefined"
+          />
         </keep-alive>
-        <component v-if="!(route.meta && route.meta.keepAlive)" :is="Component"
-          :key="route.meta.usePathKey ? route.fullPath : undefined" />
+        <component
+          v-if="!(route.meta && route.meta.keepAlive)"
+          :is="Component"
+          :key="route.meta.usePathKey ? route.fullPath : undefined"
+        />
       </router-view>
     </div>
   </el-container>
